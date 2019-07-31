@@ -8,12 +8,10 @@
 	<insert id = "insert" parameterType="com.springboot.example.model.User">
 		INSERT INTO user(ID,username,age,addrss) VALUES(#{id},#{username},#{age},#{addrss});
 	</insert>
-	
 	<!-- update user -->
 	<update id="update" parameterType="com.springboot.example.model.User">
 		UPDATE user SET   age = #{age}, username=#{username} , addrss=#{addrss}  WHERE ID=#{id}
 	</update>
-	
 	<!-- find user -->
 	<select id="find" parameterType="int" resultType="com.springboot.example.model.User">
 		SELECT ID,USERNAME,age,addrss FROM user WHERE ID=#{id}
@@ -22,13 +20,8 @@
 	<select id="findall"  resultType="com.springboot.example.model.User">
 		SELECT ID,USERNAME,age,addrss FROM user
 	</select>
-	
 	<!-- delete user -->
 	<delete id="delete" parameterType="int">
 		DELETE FROM user WHERE ID=#{id}
 	</delete>
-
-
-
-
 </mapper>

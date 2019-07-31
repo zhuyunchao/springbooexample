@@ -6,7 +6,7 @@ public class User {
     private  Integer id;
     private  String  username;
     private  Integer age;
-    private   String addrss;
+    private  String addrss;
 
 
     public Integer getId() {
@@ -40,8 +40,6 @@ public class User {
     public void setAddrss(String addrss) {
         this.addrss = addrss;
     }
-
-
     @Override
     public String toString() {
         return "User{" +
