@@ -28,6 +28,10 @@ public class citycode {
         this.cityname = cityname;
     }
 
+
+
+
+
     @Override
     public String toString() {
         return "citycode{" +

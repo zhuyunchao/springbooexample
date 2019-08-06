@@ -1,5 +1,6 @@
 package com.springboot.example.UserMapper;
 
+import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -14,4 +15,5 @@ public interface UserDao {
    void delete (Integer id);
    User    find   (Integer  id);
    List<User> findall();
+    List<UserCity>  User_City ();
 }

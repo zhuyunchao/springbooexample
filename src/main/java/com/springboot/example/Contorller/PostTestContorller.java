@@ -1,8 +1,10 @@
 package com.springboot.example.Contorller;
 
-import com.springboot.example.service.CitycodeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import com.springboot.example.dto.PostDto;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,23 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class Citycontorller {
+public class PostTestContorller {
 
-    @Autowired
-    private CitycodeService citycodeService;
-    @RequestMapping("/getcityname/{code}")
-    public String GetcityName(@PathVariable  String code){
-        //String cityname=citycodeService.findcityname("110000");
-        String cityname=citycodeService.findcityname(code);
-        return  cityname;
-    }
-    @PostMapping("/postcity")
+    @PostMapping("/postdto")
     @ResponseBody
-    public   Map<String, Object> Post(@RequestBody String code) {
+    public   Map<String, Object> post(@RequestBody PostDto  postDto) {
 
         Map<String, Object> map = new HashMap<>();
-
-        if (code.equals("110000") && code.equals(name)){
             map.put("1", "zhu");
             map.put("age", "13");
             map.put("addr", "海淀");
@@ -51,9 +43,6 @@ public class Citycontorller {
             arr[4] = 5555555;
             map.put("LIST", list);
             map.put("arr", arr);
+            return map;
         }
-        return map;
-
-    }
-
 }

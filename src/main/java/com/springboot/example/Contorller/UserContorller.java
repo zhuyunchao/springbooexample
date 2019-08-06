@@ -1,6 +1,8 @@
 package com.springboot.example.Contorller;
 
+import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
+import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ public class UserContorller {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserCityService userCityService;
 
     @RequestMapping("/insert")
     public void insert(){
@@ -61,6 +65,20 @@ public class UserContorller {
         return userService.findall();
     }
 
+    @RequestMapping("/usercity")
+    public List<UserCity> usercity() {
+        return userCityService.User_City();
+    }
+
+
+
+
+
+
+
+
+
+
     @RequestMapping("/string")
     public @ResponseBody Map<String, Object> string(){
         Map<String,Object> map = new HashMap<>();
@@ -77,7 +95,7 @@ public class UserContorller {
         map2.put("sex","女");
         map.put("abc",map2);
         List<String>  list =new ArrayList<String>();
-        list.add("lllllllllllllllllll");
+        list.add("1234567890");
         list.add("niajjnnnnnnnnnnnnn");
         list.add("ssssssssssssss");
         int arr[]=new  int[5];
