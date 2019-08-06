@@ -19,6 +19,8 @@ public class PostTestContorller {
     public   Map<String, Object> post(@RequestBody PostDto  postDto) {
 
         Map<String, Object> map = new HashMap<>();
+            String   P=postDto.getPost();
+        if(P.equals("hah"));{
             map.put("1", "zhu");
             map.put("age", "13");
             map.put("addr", "海淀");
@@ -43,6 +45,7 @@ public class PostTestContorller {
             arr[4] = 5555555;
             map.put("LIST", list);
             map.put("arr", arr);
+        }
             return map;
         }
 }

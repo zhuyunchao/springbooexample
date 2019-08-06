@@ -1,6 +1,8 @@
 package com.springboot.example.Contorller;
 
 import com.springboot.example.service.CitycodeService;
+
+import me.joshlarson.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,11 +24,14 @@ public class Citycontorller {
     }
     @PostMapping("/postcity")
     @ResponseBody
-    public   Map<String, Object> Post(@RequestBody String code) {
+    public   Map<String, Object> Post( @RequestBody JSONObject jsom) {//这里有疑难？出入进来的到底是json串还是json对象
 
         Map<String, Object> map = new HashMap<>();
 
-        if (code.equals("110000") && code.equals(name)){
+        String code1=jsom.getString("code");
+        String name=jsom.getString("name");
+
+        if (code1.equals("110000") && name.equals("上海")){
             map.put("1", "zhu");
             map.put("age", "13");
             map.put("addr", "海淀");
@@ -53,6 +58,7 @@ public class Citycontorller {
             map.put("arr", arr);
         }
         return map;
+
 
     }
 

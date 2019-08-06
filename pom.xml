@@ -99,6 +99,14 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/me.joshlarson/fast-json -->
+        <dependency>
+            <groupId>me.joshlarson</groupId>
+            <artifactId>fast-json</artifactId>
+            <version>1.7</version>
+        </dependency>
+
+
 
     </dependencies>
 
