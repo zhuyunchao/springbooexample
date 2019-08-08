@@ -7,4 +7,5 @@ import java.util.List;
 public interface UserCityService {
 
     public List<UserCity> User_City ();
+
 }

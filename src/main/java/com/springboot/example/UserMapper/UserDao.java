@@ -16,4 +16,5 @@ public interface UserDao {
    User    find   (Integer  id);
    List<User> findall();
     List<UserCity>  User_City ();
+    void updatepost(Integer  id , String username);
 }

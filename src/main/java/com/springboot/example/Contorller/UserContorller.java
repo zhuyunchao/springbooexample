@@ -47,12 +47,12 @@ public class UserContorller {
     }
 
     @RequestMapping("/delete")
-    public void delete(Integer id){
+    public void delete(){
         userService.delete(5);
 
     }
     @RequestMapping("/update")
-    public void delete(User user){
+    public void update(){
         User user1 = new User();
         user1.setId(100);
         user1.setAge(50);

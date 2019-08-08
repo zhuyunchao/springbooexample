@@ -24,11 +24,13 @@
 	<delete id="delete" parameterType="int">
 		DELETE FROM user WHERE ID=#{id}
 	</delete>
-
 	<!-- find  usercity -->
 	<select id="User_City"  resultType="com.springboot.example.dto.UserCity">
 		SELECT user.id,user.USERNAME,user.age,user.addrss ,citycode.citycode,citycode.cityname,citycode.id
 		FROM user,citycode  where user.id=citycode.id
-
 	</select>
+	<!-- update user -->
+	<update id="updatepost"  parameterType="" >
+		UPDATE user SET    username=#{username}   WHERE ID=#{id}
+	</update>
 </mapper>

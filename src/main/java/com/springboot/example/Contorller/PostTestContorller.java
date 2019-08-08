@@ -1,6 +1,9 @@
 package com.springboot.example.Contorller;
 
 import com.springboot.example.dto.PostDto;
+import com.springboot.example.model.User;
+import com.springboot.example.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,14 +16,24 @@ import java.util.Map;
 
 @RestController
 public class PostTestContorller {
+    @Autowired
+    private UserService userService;
 
     @PostMapping("/postdto")
     @ResponseBody
-    public   Map<String, Object> post(@RequestBody PostDto  postDto) {
+    public   Map<String, Object> post( @RequestBody PostDto  postDto) {
+
 
         Map<String, Object> map = new HashMap<>();
             String   P=postDto.getPost();
-        if(P.equals("hah"));{
+
+            System.out.println(P);
+            String addr= postDto.getAddr();
+            System.out.println(addr);
+
+            userService.updatepost(2,P);
+        //if(P.equals("zhu")&&addr.equals("海淀"))
+            if(P.equals("zhu111")){
             map.put("1", "zhu");
             map.put("age", "13");
             map.put("addr", "海淀");
