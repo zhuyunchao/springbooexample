@@ -30,7 +30,9 @@
 		FROM user,citycode  where user.id=citycode.id
 	</select>
 	<!-- update user -->
-	<update id="updatepost"  parameterType="" >
-		UPDATE user SET    username=#{username}   WHERE ID=#{id}
-	</update>
-</mapper>
+	<update id="updatepost" >
+		<!--	<update id="updatepost" parameterType="java.util.Map">-->
+            UPDATE user SET  username=#{username} WHERE ID=#{id}
+        </update>
+	
+    </mapper>

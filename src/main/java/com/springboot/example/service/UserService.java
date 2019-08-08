@@ -14,6 +14,6 @@ public interface UserService {
 
      public User find(Integer id);
     public List<User> findall();
-    public  void  updatepost(Integer id, String username);
+    public  void  updatepost( String username,Integer id);
 
 }

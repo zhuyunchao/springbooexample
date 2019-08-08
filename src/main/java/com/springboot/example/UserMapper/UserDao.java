@@ -4,6 +4,7 @@ import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,5 +17,5 @@ public interface UserDao {
    User    find   (Integer  id);
    List<User> findall();
     List<UserCity>  User_City ();
-    void updatepost(Integer  id , String username);
+    void updatepost(@Param("username") String username,@Param("id") Integer id);
 }

@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 //@ComponentScan({"com.springboot.example.UserMapper"})
+@Service
 public class UserServiceImpl implements  UserService{
     @Autowired
     private UserDao  userDao ;
@@ -47,7 +48,7 @@ public class UserServiceImpl implements  UserService{
     }
 
     @Override
-    public void updatepost(Integer id, String username) {
-        userDao.updatepost(id,username);
+    public void updatepost(String username,Integer id) {
+        userDao.updatepost(username,id);
     }
 }

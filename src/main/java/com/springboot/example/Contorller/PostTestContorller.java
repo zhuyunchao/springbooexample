@@ -31,7 +31,7 @@ public class PostTestContorller {
             String addr= postDto.getAddr();
             System.out.println(addr);
 
-            userService.updatepost(2,P);
+            userService.updatepost(P,2);
         //if(P.equals("zhu")&&addr.equals("海淀"))
             if(P.equals("zhu111")){
             map.put("1", "zhu");
