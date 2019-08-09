@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,10 +53,11 @@ public class PostTestContorller {
             arr[0] = 1;
             arr[1] = 2222;
             arr[2] = 3333;
-            arr[3] = 44444;
+            arr[3] = 77777777;
             arr[4] = 5555555;
             map.put("LIST", list);
             map.put("arr", arr);
+
         }
             return map;
         }
