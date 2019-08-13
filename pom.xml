@@ -96,7 +96,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
+
             <optional>true</optional>
         </dependency>
         <!-- https://mvnrepository.com/artifact/me.joshlarson/fast-json -->
@@ -104,6 +104,11 @@
             <groupId>me.joshlarson</groupId>
             <artifactId>fast-json</artifactId>
             <version>1.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
 

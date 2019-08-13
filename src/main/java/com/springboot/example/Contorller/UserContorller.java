@@ -54,10 +54,10 @@ public class UserContorller {
     @RequestMapping("/update")
     public void update(){
         User user1 = new User();
-        user1.setId(100);
-        user1.setAge(50);
+        user1.setId(10);
+        user1.setAge(299);
         user1.setUsername("不一样的springboot");
-        user1.setAddrss("北京将台路地铁口将台普天实业10号院自如总部");
+        user1.setAddrss("西安天剑10号院自如总部");
         userService.update(user1);
     }
     @RequestMapping("/findall")
