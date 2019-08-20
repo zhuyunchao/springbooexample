@@ -2,7 +2,9 @@
 <!DOCTYPE generatorConfiguration
         PUBLIC " -//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
 <generatorConfiguration>
+    <properties resource="application.properties"/>
     <classPathEntry location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
     <context id="zhu" targetRuntime="MyBatis3">
         <commentGenerator>
@@ -10,9 +12,9 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!-- mysql数据库连接 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.16.16.143:3306/region" userId="dev_rp"
-                        password="ziroomdb"/>
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}" userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}"/>
         <!-- 生成model实体类文件位置 -->
         <javaModelGenerator targetPackage="com.springboot.example.model"
                             targetProject="src/main/java">
