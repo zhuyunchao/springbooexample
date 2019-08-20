@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springboot.example.UserMapper.citycode11Mapper" >
+  <resultMap id="BaseResultMap" type="com.springboot.example.model.citycode11" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="citycode" property="citycode" jdbcType="VARCHAR" />
+    <result column="cityname" property="cityname" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.springboot.example.model.citycode11" >
+    insert into citycode (id, citycode, cityname
+      )
+    values (#{id,jdbcType=INTEGER}, #{citycode,jdbcType=VARCHAR}, #{cityname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.springboot.example.model.citycode11" >
+    insert into citycode
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="citycode != null" >
+        citycode,
+      </if>
+      <if test="cityname != null" >
+        cityname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="citycode != null" >
+        #{citycode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null" >
+        #{cityname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

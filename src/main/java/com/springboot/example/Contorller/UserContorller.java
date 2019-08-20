@@ -62,21 +62,15 @@ public class UserContorller {
     }
     @RequestMapping("/findall")
     public List<User> findall() {
+
         return userService.findall();
     }
 
     @RequestMapping("/usercity")
     public List<UserCity> usercity() {
+
         return userCityService.User_City();
     }
-
-
-
-
-
-
-
-
 
 
     @RequestMapping("/string")
