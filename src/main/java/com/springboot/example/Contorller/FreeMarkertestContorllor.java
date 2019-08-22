@@ -4,78 +4,42 @@ import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
-import org.mybatis.spring.annotation.MapperScan;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-@RestController
-//@ComponentScan({"com.springboot.example.service"})
-//@MapperScan({"com.springboot.example.UserMapper"})
-public class UserContorller {
-
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private UserCityService userCityService;
-
-    @RequestMapping("/insert")
-    public void insert(){
-
-        User user = new User();
-        user.setId(2);
-        user.setUsername("张张张");
-        user.setAge(10);
-        user.setAddrss("上海");
-
-        userService.insert(user);
-        System.out.println("插入成功");
-    }
-    @RequestMapping("/find")
-    public User find() {
-
-        User user = userService.find(2);
-        return user;
+@Controller
+public class FreeMarkertestContorllor{
+    @RequestMapping("/wel")
+    public String hello(Map<String,Object> map){
+        map.put("name", "[Angel -- 守护天使]");
+        System.out.println(map);
+        return  "hello";
     }
 
-    @RequestMapping("/delete")
-    public void delete(){
-        userService.delete(5);
-
+    @RequestMapping("/hel")
+    public String hello(Model model){
+        model.addAttribute("name", "[- 守护天使- 守护天使- 守护天使- 守护天使Angel -]");
+        System.out.println(model);
+        return  "hello";
     }
-    @RequestMapping("/update")
-    public void update(){
-        User user1 = new User();
-        user1.setId(10);
-        user1.setAge(299);
-        user1.setUsername("不一样的springboot");
-        user1.setAddrss("西安天剑10号院自如总部");
-        userService.update(user1);
+    @RequestMapping("/wel1")
+    public ModelAndView hello1(){
+        ModelAndView mv = new ModelAndView("hello");
+        mv.addObject("name","zhuyunhcao to");
+        return  mv;
     }
-    @RequestMapping("/findall")
-    public List<User> findall() {
-
-        return userService.findall();
-    }
-
-    @RequestMapping("/usercity")
-    public List<UserCity> usercity() {
-
-        return userCityService.User_City();
-    }
-
-
-    @RequestMapping("/string")
+    @RequestMapping("/string1")
     public @ResponseBody Map<String, Object> string(){
         Map<String,Object> map = new HashMap<>();
         map.put("1","zhu");
@@ -108,3 +72,6 @@ public class UserContorller {
     }
 
 }
+
+
+
