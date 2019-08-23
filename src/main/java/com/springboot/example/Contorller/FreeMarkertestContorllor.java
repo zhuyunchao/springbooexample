@@ -2,12 +2,14 @@ package com.springboot.example.Contorller;
 
 import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
+import com.springboot.example.service.CitycodeService;
 import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +22,12 @@ import java.util.Map;
 
 @Controller
 public class FreeMarkertestContorllor{
+
+
+    @Autowired
+    private CitycodeService citycodeService;
+    @Autowired
+    private UserCityService userCityService;
     @RequestMapping("/wel")
     public String hello(Map<String,Object> map){
         map.put("name", "[Angel -- 守护天使]");
@@ -31,6 +39,7 @@ public class FreeMarkertestContorllor{
     public String hello(Model model){
         model.addAttribute("name", "[- 守护天使- 守护天使- 守护天使- 守护天使Angel -]");
         System.out.println(model);
+
         return  "hello";
     }
     @RequestMapping("/wel1")
@@ -39,8 +48,34 @@ public class FreeMarkertestContorllor{
         mv.addObject("name","zhuyunhcao to");
         return  mv;
     }
+    @RequestMapping("/haha")
+    public String haha(ModelMap map){
+        //List<UserCity> list=userCityService.User_City();
+       // map.addAttribute(list);
+        List<String> lists=new ArrayList<String>();
+        lists.add("aaa");
+        lists.add("bbbfffffff");
+        lists.add("ccc");
+        lists.add("ddd");
+        for(String list : lists){
+            System.out.println(list);
+        }
+        Map<String,Object> map1 = new HashMap<>();
+        map1.put("ni","zhu");
+        map1.put("age","13");
+        map1.put("addr","海淀");
+        //map.addAttribute("name","ajsjajsjajsajjsa to");
+        map.addAttribute("listqq",lists);
+       // map.put("listqq",lists);
+        map.addAttribute("mp",map1);
+        //map.put("map1","map1");
+
+        return  "hello";
+    }
+
     @RequestMapping("/string1")
-    public @ResponseBody Map<String, Object> string(){
+    @ResponseBody
+    public  Map<String, Object> string(){
         Map<String,Object> map = new HashMap<>();
         map.put("1","zhu");
         map.put("age","13");
