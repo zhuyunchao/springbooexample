@@ -4,6 +4,7 @@ import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
+import org.apache.log4j.Logger;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,7 +24,7 @@ import java.util.Map;
 //@ComponentScan({"com.springboot.example.service"})
 //@MapperScan({"com.springboot.example.UserMapper"})
 public class UserContorller {
-
+    private static Logger log =Logger.getLogger(UserContorller.class);
     @Autowired
     private UserService userService;
     @Autowired
@@ -103,6 +104,10 @@ public class UserContorller {
 
         map.put("LIST",list);
         map.put("arr",arr);
+        log.info("map转json成功infoinfoinfoinfoinfoinfoinfoinfo:" + map);
+        log.debug("map转json成功debugdebugdebugdebugdebugdebugdebugdebugdebug:" + map);
+        log.error("map转json成功errorerrorerrorerrorerrorerrorerror:" + map);
+
         return  map;
 
     }

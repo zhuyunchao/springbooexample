@@ -45,7 +45,18 @@ public class FreeMarkertestContorllor{
     @RequestMapping("/wel1")
     public ModelAndView hello1(){
         ModelAndView mv = new ModelAndView("hello");
-        mv.addObject("name","zhuyunhcao to");
+        //mv.addObject("name","zhuyunhcao to");
+        List<String> lists=new ArrayList<String>();
+        lists.add("aaa");
+        lists.add("bbbfffffff");
+        lists.add("ccc");
+        lists.add("ddd");
+        mv.addObject("listqq",lists);
+        Map<String,Object> map1 = new HashMap<>();
+        map1.put("ni","zhu");
+        map1.put("age","13");
+        map1.put("addr","海淀");
+        mv.addObject("mp",map1);
         return  mv;
     }
     @RequestMapping("/haha")
