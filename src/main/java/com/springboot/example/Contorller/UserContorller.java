@@ -4,6 +4,9 @@ import com.springboot.example.dto.UserCity;
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
+
+import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +26,9 @@ import java.util.Map;
 @RestController
 //@ComponentScan({"com.springboot.example.service"})
 //@MapperScan({"com.springboot.example.UserMapper"})
+@Slf4j
 public class UserContorller {
-    private static Logger log =Logger.getLogger(UserContorller.class);
+    //private static Logger log =Logger.getLogger(UserContorller.class);
     @Autowired
     private UserService userService;
     @Autowired
