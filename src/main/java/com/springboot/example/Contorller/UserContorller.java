@@ -1,6 +1,7 @@
 package com.springboot.example.Contorller;
 
 import com.springboot.example.dto.UserCity;
+import com.springboot.example.eunm.Name;
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
@@ -83,7 +84,8 @@ public class UserContorller {
     @RequestMapping("/string")
     public @ResponseBody Map<String, Object> string(){
         Map<String,Object> map = new HashMap<>();
-        map.put("1","zhu");
+        //map.put("1","zhu");
+        map.put("1", Name.MAN_NAME);
         map.put("age","13");
         map.put("addr","海淀");
         map.put("籍贯","河北");
