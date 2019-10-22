@@ -41,5 +41,8 @@ public enum Addess{
         this.name = name;
     }
 
-
+    public static void main(String[] args) {
+        System.out.println(Addess.valueOf( "ADDESS_INFO_1").getName());
+        System.out.println(Addess.valueOf( "ADDESS_INFO_1").getCode());
+    }
 }
