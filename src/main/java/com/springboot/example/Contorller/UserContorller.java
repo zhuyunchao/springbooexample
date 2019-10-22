@@ -2,6 +2,7 @@ package com.springboot.example.Contorller;
 
 import com.springboot.example.dto.UserCity;
 import com.springboot.example.eunm.Addess;
+
 import com.springboot.example.eunm.Name;
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserCityService;
@@ -12,7 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,12 +32,18 @@ import java.util.Map;
 //@ComponentScan({"com.springboot.example.service"})
 //@MapperScan({"com.springboot.example.UserMapper"})
 @Slf4j
+
+
+//@PropertySource(value = {"classpath:application.yml"})
+
 public class UserContorller {
     //private static Logger log =Logger.getLogger(UserContorller.class);
     @Autowired
     private UserService userService;
     @Autowired
     private UserCityService userCityService;
+    @Value("${age}")
+    private  String  age;
 
     @RequestMapping("/insert")
     public void insert(){
@@ -86,9 +95,11 @@ public class UserContorller {
     public @ResponseBody Map<String, Object> string(){
         Map<String,Object> map = new HashMap<>();
         //map.put("1","zhu");
-       // map.put("1", Name.MAN_NAME);
-        map.put("1",Addess.getNameByCode("10"));
-        map.put("age","13");
+        map.put("1", Name.MAN_NAME);
+
+        //map.put("1",Addess.getNameByCode("10"));
+
+        map.put("age",age);
         map.put("addr","海淀");
         map.put("籍贯","河北");
         map.put("sex","男");
