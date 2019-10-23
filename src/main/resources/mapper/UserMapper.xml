@@ -8,6 +8,9 @@
 	<insert id = "insert" parameterType="com.springboot.example.model.User">
 		INSERT INTO user(ID,username,age,addrss) VALUES(#{id},#{username},#{age},#{addrss});
 	</insert>
+	<insert id = "insertw" parameterType="com.springboot.example.model.User">
+		INSERT INTO user(ID,username,age,addrss) VALUES(#{id},#{username},#{age},#{addrss});
+	</insert>
 	<!-- update user -->
 	<update id="update" parameterType="com.springboot.example.model.User">
 		UPDATE user SET   age = #{age}, username=#{username} , addrss=#{addrss}  WHERE ID=#{id}

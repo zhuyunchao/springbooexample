@@ -12,6 +12,7 @@ import java.util.List;
 @Mapper
 public interface UserDao {
     void insert (User user);
+    void insertw(User user);
    void   update (User user);
    void delete (Integer id);
    User    find   (Integer  id);
