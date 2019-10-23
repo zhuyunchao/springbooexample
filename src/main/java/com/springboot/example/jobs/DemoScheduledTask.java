@@ -31,7 +31,6 @@ public class DemoScheduledTask {
     public void autoInsert() {
         System.out.println("每20秒插入数据库中一条数据执行一次");
         User user = new User();
-        user.setId(11);
         user.setUsername("维修部门");
         user.setAge(100);
         user.setAddrss("云南");
