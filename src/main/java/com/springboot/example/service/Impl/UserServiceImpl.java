@@ -50,6 +50,7 @@ public class UserServiceImpl implements  UserService{
 
     @Override
     public void updatepost(String username,Integer id) {
+
         userDao.updatepost(username,id);
     }
 }

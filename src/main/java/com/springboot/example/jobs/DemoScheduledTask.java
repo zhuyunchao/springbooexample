@@ -2,10 +2,12 @@ package com.springboot.example.jobs;
 
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 @Component
+@Slf4j
 public class DemoScheduledTask {
        // @Scheduled(cron="0 0/5 * * * ?")
     @Autowired
@@ -35,7 +37,7 @@ public class DemoScheduledTask {
         user.setAge(100);
         user.setAddrss("云南");
         userService.insertw(user);
-        System.out.println("插入成功");
+        log.info("插入成功");
 
 
     }
