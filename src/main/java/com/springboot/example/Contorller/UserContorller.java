@@ -2,12 +2,10 @@ package com.springboot.example.Contorller;
 
 import com.springboot.example.dto.UserCity;
 import com.springboot.example.eunm.Addess;
-
 import com.springboot.example.eunm.Name;
 import com.springboot.example.model.User;
 import com.springboot.example.service.UserCityService;
 import com.springboot.example.service.UserService;
-
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.log4j.Logger;
@@ -16,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.jdbc.support.CustomSQLErrorCodesTranslation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,15 +26,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @RestController
 //@ComponentScan({"com.springboot.example.service"})
 //@MapperScan({"com.springboot.example.UserMapper"})
 @Slf4j
-
-
 //@PropertySource(value = {"classpath:application.yml"})
-
 public class UserContorller {
     //private static Logger log =Logger.getLogger(UserContorller.class);
     @Autowired
@@ -44,7 +39,6 @@ public class UserContorller {
     private UserCityService userCityService;
     @Value("${age}")
     private  String  age;
-
     @RequestMapping("/insert")
     public void insert(){
 
@@ -130,5 +124,12 @@ public class UserContorller {
         return  map;
 
     }
+    @RequestMapping("/vue")
+    public List<User> vue() {
+
+        List<User> user = userService.findall();
+        return user;
+    }
 
 }
+

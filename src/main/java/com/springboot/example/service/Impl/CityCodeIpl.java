@@ -17,4 +17,10 @@ public class CityCodeIpl  implements CitycodeService {
         String cityname = citycode.findcityname(code);
         return cityname;
     }
+
+    @Override
+    public citycode findByid(Integer id) {
+        citycode cityCode =citycode.findByid(id);
+        return cityCode;
+    }
 }

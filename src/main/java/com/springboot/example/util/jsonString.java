@@ -43,13 +43,20 @@ public class jsonString {
         map.put("LIST", list);
         map.put("arr", arr);
 
-        String  Js=JSONObject.toJSONString(map);
+        //String  Js=JSONObject.toJSONString(map);
+      //  System.out.println(Js);
+        JSONObject Js = new JSONObject(map);
         System.out.println(Js);
 
+        System.out.println(Js.getClass().toString());
 
-        JSONObject JSS=JSONObject.parseObject(Js);
-        String a=JSS.getString("arr").toString();
-        System.out.println(a);
+
+//        JSONObject JSS=JSONObject.parseObject(Js);
+//
+//        System.out.println(JSS.getClass().toString());
+//        String a=JSS.getString("arr").toString();
+//        System.out.println(a);
+//        System.out.println(a.getClass().toString());
     }
     public static void main (String[]args){
         jsonString js =new jsonString();

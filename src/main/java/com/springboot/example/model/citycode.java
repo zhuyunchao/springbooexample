@@ -1,6 +1,7 @@
 package com.springboot.example.model;
 
 public class citycode {
+
     private  Integer id;
     private String citycode;
     private String cityname;
@@ -27,9 +28,6 @@ public class citycode {
     public void setCityname(String cityname) {
         this.cityname = cityname;
     }
-
-
-
 
 
     @Override

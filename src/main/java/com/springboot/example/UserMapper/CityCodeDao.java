@@ -12,4 +12,6 @@ public interface CityCodeDao{
 
     String findcityname(String citycode);
 
+    citycode findByid(Integer id);
+
 }

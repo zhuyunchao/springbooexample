@@ -21,7 +21,7 @@
 	</select>
 	<!-- findall user -->
 	<select id="findall"  resultType="com.springboot.example.model.User">
-		SELECT ID,USERNAME,age,addrss FROM user
+		SELECT ID,USERNAME,age,addrss FROM user LIMIT 2,7
 	</select>
 	<!-- delete user -->
 	<delete id="delete" parameterType="int">

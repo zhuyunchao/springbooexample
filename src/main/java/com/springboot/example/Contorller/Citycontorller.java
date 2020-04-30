@@ -25,6 +25,13 @@ public class Citycontorller {
         String cityname=citycodeService.findcityname(code);
         return  cityname;
     }
+
+    @RequestMapping("/getcityname1/")
+    public String GetcityName1(String code){
+        //String cityname=citycodeService.findcityname("110000");
+        String cityname=citycodeService.findcityname(code);
+        return  cityname;
+    }
     @PostMapping("/postcity")
     @ResponseBody
     public   Map<String, Object> Post( @RequestBody JSONObject jsom) {//这里有疑难？出入进来的到底是json串还是json对象

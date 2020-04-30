@@ -7,4 +7,7 @@
 	<select id="findcityname" parameterType="String" resultType="String">
 		SELECT cityname FROM citycode WHERE citycode=#{id}
 	</select>
+	<select id="findByid" parameterType="int" resultType="com.springboot.example.model.citycode">
+		SELECT * FROM citycode WHERE citycode=#{id}
+	</select>
 </mapper>

@@ -16,7 +16,11 @@ spring:
     request-context-attribute: request
     template-loader-path:classpath: /templates/
     contentType: text/html
-
+    expose-request-attributes: true
+    expose-session-attributes: true
+    enabled: true
+    settings:
+      classic_compatible: true
 
 mybatis:
   typeAliasesPackage: com.springboot.example.model
